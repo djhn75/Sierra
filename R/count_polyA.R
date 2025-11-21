@@ -255,7 +255,7 @@ make_reference <- function(gtf_file,
                            gene.symbol.ref = 'gene_name') {
   ## Read in the gtf file
   gtf_gr <- rtracklayer::import(gtf_file)
-  gtf_TxDb <- GenomicFeatures::makeTxDbFromGFF(gtf_file, format="gtf")
+  gtf_TxDb <- txdbmaker::makeTxDbFromGFF(gtf_file, format="gtf")
   
   ## Build a table of gene start-end positions
   genes <- GenomicFeatures::genes(gtf_TxDb)
