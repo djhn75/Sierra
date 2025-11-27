@@ -212,7 +212,7 @@ gene_Labels<- function(gr, reference_gr, annotationType)
 #'         gtf_file <- "u:/Reference/mm10/mm10_gene.gtf.gz"
 #'         gtf_file <- "u:/Reference/mm10/cellranger_genes.gtf.gz"
 #'        gtf_gr <- rtracklayer::import(gtf_file)
-#'        gtf_TxDb <- GenomicFeatures::makeTxDbFromGFF(gtf_file, format="gtf")
+#'        gtf_TxDb <- txdbmaker::makeTxDbFromGFF(gtf_file, format="gtf")
 #'
 #' annotationType can be c("any", "start", "end", "within", "equal"),
 #' @param gr a granges object of peaks to annotate
@@ -246,7 +246,7 @@ gene_Labels<- function(gr, reference_gr, annotationType)
 #'  
 #'  # convert gtf file to both granges and a TXDb object
 #'  gtf_gr <- rtracklayer::import(reference.file)
-#'  gtf_TxDb <- GenomicFeatures::makeTxDbFromGFF(reference.file, format="gtf")
+#'  gtf_TxDb <- txdbmaker::makeTxDbFromGFF(reference.file, format="gtf")
 #'  
 #'  genome <- BSgenome.Mmusculus.UCSC.mm10::BSgenome.Mmusculus.UCSC.mm10          
 #'   
@@ -500,7 +500,7 @@ annotate_gr_from_gtf <- function(gr, invert_strand = FALSE, gtf_gr = NULL,
 #'
 #'
 #' You need to run the following code:
-#'      genome <-  GenomicFeatures::makeTxDbFromGFF(gtf_file, format="gtf")
+#'      genome <-  txdbmaker::makeTxDbFromGFF(gtf_file, format="gtf")
 #'
 #' annotationType can be c("any", "start", "end", "within", "equal"),
 #' @param genome genome object of organism.
