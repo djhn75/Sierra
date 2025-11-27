@@ -59,8 +59,9 @@ AnnotatePeaksFromGTF <- function(peak.sites.file,
 
   ## Import the GTF reference
   gtf_gr <- rtracklayer::import(gtf.file)
-  gtf_TxDb <- GenomicFeatures::makeTxDbFromGFF(gtf.file, format="gtf")
-
+  
+  
+  gtf_TxDb <- txdbmaker::makeTxDbFromGFF(gtf.file, format="gtf")
   ## Read in the peaks
   peak.table <- read.table(peak.sites.file, header = TRUE, sep="\t", stringsAsFactors = FALSE, quote = '')
   print(paste("Annotating ", nrow(peak.table), " peak coordinates."))
