@@ -74,7 +74,7 @@ start <- 70331172
 
 
 You need to run the following code:
-     genome <-  GenomicFeatures::makeTxDbFromGFF(gtf_file, format="gtf")
+     genome <-  txdbmaker::makeTxDbFromGFF(gtf_file, format="gtf")
 
 annotationType can be c("any", "start", "end", "within", "equal"),
 }
